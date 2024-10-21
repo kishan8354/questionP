@@ -4,19 +4,19 @@ import "./App.css";
 // Questions data
 const questionsData = [
     {
-        question: "What is the capital of France?",
-        options: ["Berlin", "Paris", "Madrid", "Rome"],
-        correctAnswer: "Paris",
+        question: "What is the capital of India?",
+        options: ["Berlin", "Paris", "India", "Rome"],
+        correctAnswer: "India",
     },
     {
-        question: "Which planet is known as the Red Planet?",
-        options: ["Earth", "Venus", "Mars", "Jupiter"],
-        correctAnswer: "Mars",
+        question: "Which is the oldest IIT in India?",
+        options: ["IIT Delhi", "IIT Bombay", "IIT Kharagpur", "IIT Madras"],
+        correctAnswer: "IIT Kharagpur",
     },
     {
-        question: "What is the largest mammal in the world?",
-        options: ["Elephant", "Whale", "Shark", "Dolphin"],
-        correctAnswer: "Whale",
+        question: "In which year was IIT Bombay established?",
+        options: ["1951", "1958", "1961", "1959"],
+        correctAnswer: "1958",
     },
     {
         question: "Who wrote 'Romeo and Juliet'?",
@@ -37,7 +37,7 @@ function App() {
     const [submittedOptions, setSubmittedOptions] = useState({});
     const [submitted, setSubmitted] = useState(false);
 
-    // Timer effect
+    
     useEffect(() => {
         if (timeLeft > 0) {
             const timer = setInterval(() => setTimeLeft(timeLeft - 1), 1000);
@@ -57,7 +57,6 @@ function App() {
         }
     };
 
-    // Handle submit for the current question
     const handleSubmit = () => {
         if (!submitted && selectedOptions[currentQuestionIndex] !== undefined) {
             setSubmittedOptions({
@@ -68,7 +67,6 @@ function App() {
         }
     };
 
-    // Move to the next question
     const handleNext = () => {
         if (currentQuestionIndex < questionsData.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -78,7 +76,6 @@ function App() {
         }
     };
 
-    // Function to determine class name for option styling
     const getOptionClass = (questionIndex, option) => {
         if (!submitted) {
             return selectedOptions[questionIndex] === option ? "selected" : "";
@@ -91,7 +88,6 @@ function App() {
         return "";
     };
 
-    // Current question data
     const currentQuestion = questionsData[currentQuestionIndex];
 
     return (
