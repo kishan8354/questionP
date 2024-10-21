@@ -1,3 +1,5 @@
-// Use the following to include this JavaScript file 
-// <script src="script1.js"></script>
-var i = 10;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+import App from './App';
+ReactDOM.render(<App />, document.getElementById('root'));
